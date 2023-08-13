@@ -138,7 +138,6 @@ def users_list(request):
         # 'safe=False' for objects serialization
     elif request.method == 'POST':
         users_data = JSONParser().parse(request)
-        users_data['password'] = make_password(users_data['password'])  # Gera o hash da senha
         users_serializer = UserSerializer(data=users_data)
         if users_serializer.is_valid():
             users_serializer.save()
