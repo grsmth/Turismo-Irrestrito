@@ -35,7 +35,7 @@ def index(request):
     search_query = request.GET.get('search', '')
     locals = Local.objects.filter(nome__icontains=search_query).order_by('-nota')[:10]
     local_serializer = LocalSerializer(locals, many=True)
-    return render(request,'index.html',{'data': local_serializer.data})
+    return render(request,'home.html',{'data': local_serializer.data})
 
 
 def user_register(request):
@@ -117,7 +117,7 @@ def home(request):
     user = request.user 
 
     context = {'user': user}
-    return render(request, 'index.html', context=context)
+    return render(request, 'home.html', context=context)
 
 def logout_view(request):
     logout(request)

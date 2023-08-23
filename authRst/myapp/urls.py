@@ -7,7 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name='index'),
     path('api/myapp/user/', views.users_list, name='user_list'),
-    path('index/', views.home, name='index'),
+    path('home/', views.home, name='home'),
     path('logout', views.logout_view, name='logout'),
     path('user_login/', views.user_login, name='user_login'),
     path('user_register/', views.user_register, name='user_register'),
